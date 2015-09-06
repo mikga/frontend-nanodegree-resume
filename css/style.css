@@ -1,214 +1,224 @@
-body,
-div,
+@import url(https://fonts.googleapis.com/css?family=Roboto:700,400,100italic,100);
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:100);
+@import url(http://weloveiconfonts.com/api/?family=zocial);
+
+* {
+	font-family: 'Roboto', sans-serif;
+	color: #455a64;
+}
+
+body {
+	font-weight: 100;
+}
+
 ul,
-li,
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  padding:0;
-  margin:0;
-  font-family: "Roboto", sans-serif;
+li {
+	list-style: none;
 }
 
-.clear-fix {
-  overflow: auto;
-}
-
-.education-entry,
-.work-entry,
-.project-entry {
-  padding: 0 5%;
-}
-
-h1 {
-  font-size: 40px;
-  color: #f5a623;
-  line-height: 48px;
-  display: inline;
-}
-
-h2 {
-  font-weight: bold;
-  font-size: 24px;
-  color: #999;
-  line-height: 29px;
-  padding: 10px;
-}
-
-h3 {
-  font-style: italic;
-  font-size: 20px;
-  color: #000;
-  line-height: 22px;
-}
-
-h4 {
-  font-weight: bold;
-  font-size: 14px;
-  color: #4a4a4a;
-  line-height: 17px;
-}
-
-h2,
-h3,
-h4,
-h5 {
-  padding:10px 5%;
-
-}
-
-
-.date-text {
-  font-style: italic;
-  font-size: 14px;
-  color: #999;
-  line-height: 16px;
-  float: left;
-}
-
-.location-text {
-  font-style: italic;
-  font-size: 14px;
-  color: #999;
-  line-height: 16px;
-  float: right;
-
-}
-
-p {
-  font-size: 14px;
-  color: #333;
-  line-height: 21px;
+li {
+	display: inline-block;
 }
 
 a {
-  color: #1199c3;
-  text-decoration: none;
-  margin-top: 10px;
-  display: block;
+	color: #455a64;
 }
 
-.welcome-message {
-  font-style: italic;
-  font-size: 18px;
-  color: #f3f3f3;
-  line-height: 28px;
+a:hover {
+	color: #FFA606;
+	text-decoration: none;
 }
 
-#skills-h3 {
-  color: #f5ae23;
-  display: none;
+header,
+section {
+	min-height: 100vh;
 }
 
-.orange {
-  background-color: #f5ae23;
+footer {
+	padding-top: 10rem;
+	margin-bottom: 10rem;
 }
 
-.orange-text {
-  color: #f5ae23;
+h1,
+h2,
+h3,
+h4 {
+	font-weight: 100;
+	text-align: center;
 }
 
-.white-text {
-  font-weight: bold;
-  color: #fff;
+h2 {
+	font-family: 'Roboto Slab', serif;
+	font-size: 4rem;
 }
 
-.gray {
-  background-color: #f3f3f3;
-  padding-bottom: 10px;
-  clear:both;
+h3 {
+	font-family: 'Roboto Slab', serif;
+	font-size: 3rem;
+	font-weight: 400;
 }
 
-.dark-gray {
-  background-color: #4a4a4a;
+h4 {
+	font-size: 2rem;
 }
 
-/* TODO: Replace with image later */
+p {
+	font-family: 'Roboto Slab', serif;
+	font-size: 2rem;
+}
+
+
+/*Header*/
+.header-wrapper {
+	position: relative;
+}
+
 #header {
-  background-color: #484848;
+	min-height: 100vh;
 }
 
-.flex-box {
-  display: -webkit-flex;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  padding: 10px;
+#header-bg {
+	opacity: 0.3;
+	width: 100%;
+	height: 100vh;
+	position: absolute;
+	background-color: #fff;
+	background-repeat: no-repeat;
+	background-position: right bottom;
 }
 
-.center-content {
-  padding: 2.5% 5%;
+@media screen and (max-height: 600px){
+	#header-bg {
+		background-position: right top;
+	}
 }
 
-ul {
-  list-style-type: none;
+
+#name {
+	margin-top: 15vh;
+	font-size: 8rem;
+	font-weight: 700;
 }
 
 .biopic {
-  float: left;
-  padding: 10px;
-  width: 200px;
-  display: none;
+	display: block;
 }
 
-img {
-  padding: 10px;
+.header-role {
+	font-size: 2rem;
+	font-weight: 100;
+	font-style: italic;
 }
 
-span {
-  padding: 5px;
+.orange-text {
+	display: none;
 }
 
-#lets-connect {
-  text-align: center;
+#topContacts {
+	margin: 3rem 0;
 }
 
-/* Media queries to handle various device widths */
-
-@media only screen and (max-width: 1024px) {
-  #lets-connect {
-    margin-top: 5%;
-  }
+.contact-link {
+	font-size: 0;
 }
 
-@media only screen and (max-width:900px) {
-  .biopic {
-    width: 175px;
-  }
+.welcome-message {
+	margin: 5rem 0;
+	font-size: 3rem;
+	font-weight: 100;
 }
 
-@media only screen and (max-width: 750px) {
-  #lets-connect {
-    margin-top: 10%;
-  }
-  .biopic {
-    width: 150px;
-  }
-  .welcome-message {
-    display: none;
-  }
+.skill {
+	display: inline-block;
+	margin: 1rem;
+	font-size: 2rem;
+	line-height: 3rem;
+	padding: 0 0.5em;
+	border: 1px solid #455a64;
+	border-radius: 1rem;
 }
 
+/* Work experience */
+
+.work-entry {
+	margin: 5rem 0;
+}
+
+.date-text,
+.location-text {
+	font-size: 1.5rem;
+	font-style: italic;
+	text-align: center;
+}
+
+/* Projects */
+.project-entry {
+	margin: 5rem 0;
+}
+
+.project-image {
+	margin: 15px 0;
+}
+
+/* Education */
+
+.education-entry {
+	margin: 5rem 0;
+}
+
+.education-major {
+
+}
+
+/* Map */
 #map {
-  display: block;
-  height: 100%;
-  margin: 0 5%;
+	display: block;
+	height: 100%;
 }
 
 #mapDiv {
-  height: 400px;
-  width: 100%;
-  padding-bottom: 5%;
+	height: 100vh;
+	width: 100%;
+	padding-bottom: 5%;
 }
 
-@media only screen and (min-width: 750px) {
-  #skills-h3,
-  .biopic {
-    display: block;
-  }
+@media screen and (max-width: 414px){
+	#mapDiv {
+		height: 25vh;
+	}
 }
+
+@media screen and (min-width: 415px) and (max-width: 768px){
+	#mapDiv {
+		height: 50vh;
+	}
+}
+
+
+
+/* Footer */
+
+#footerContacts {
+	margin: 5rem 0 0 0;
+}
+
+#footerContacts li {
+	display: inline-block;
+	margin: 0 3rem 0 0;
+}
+
+#footerContacts a {
+	font-size: 2rem;
+}
+
+
+/* zocial */
+
+[class*="zocial-"]:before {
+	font-family: "zocial", sans-serif;
+	font-size: 2rem;
+	margin: 0 1rem 0 2rem;
+}
+
+
+

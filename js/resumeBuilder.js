@@ -3,28 +3,29 @@ This is empty on purpose! Your code to build the resume will go here.
  */
 
 var bio = {
-	name : "Mik",
-	role : "Web Designer/Developer",
-	contacts : {
-		mobile: "+44-1111-111-111",
+	name: "Mik",
+	role: "Web Designer/Developer",
+	contacts: {
+		mobile: "example",
 		email:  "mik@example.com",
 		github: "https://github.com/mikga",
-		twitter: "@example",
+		twitter: "example",
 		location: "London, UK"
 	},
 	welcomeMessage: "Welcome to my online résumé",
 	skills: ["Skill 1", "Skill 2", "Skill 3"],
-	biopic: "http://placehold.it/200x200",
+	biopic: "images/mik_small.jpg",
 	displayContact: function(id){
 		var div = $(id);
-		div.append(HTMLmobile.replace("%data%", this.contacts.mobile));
-		div.append(HTMLemail.replace("%data%", this.contacts.email));
-		div.append(HTMLgithub.replace("%data%", this.contacts.github));
-		div.append(HTMLtwitter.replace("%data%", this.contacts.twitter));
-		div.append(HTMLlocation.replace("%data%", this.contacts.location));
+		div.append(HTMLmobile.replace(/%data%/g, this.contacts.mobile));
+		div.append(HTMLemail.replace(/%data%/g, this.contacts.email));
+		div.append(HTMLgithub.replace(/%data%/g, this.contacts.github));
+		div.append(HTMLtwitter.replace(/%data%/g, this.contacts.twitter));
+		div.append(HTMLlocation.replace(/%data%/g, this.contacts.location));
 	},
 	display: function(){
 		var header = $("#header");
+		var headerBg = $("#header-bg");
 
 		// Header
 		header.prepend(HTMLheaderRole.replace("%data%", this.role));
@@ -34,7 +35,7 @@ var bio = {
 		this.displayContact("#topContacts");
 
 		// Bio Pic
-		header.append(HTMLbioPic.replace("%data%", this.biopic));
+		headerBg.css("background-image", "url(" + this.biopic + ")");
 
 		// Welcome message
 		header.append(HTMLwelcomeMsg.replace("%data%", this.welcomeMessage));
@@ -84,7 +85,7 @@ var education = {
 	],
 	display: function(){
 
-
+		// Format the schools
 		for (var i = 0; i < this.schools.length; i++){
 			var school = this.schools[i];
 			var div = $(HTMLschoolStart);
@@ -99,10 +100,10 @@ var education = {
 			$("#education").append(div);
 		}
 
+		// Format the online courses if exists
 		if (this.onlineCourses.length > 0){
 			$("#education").append(HTMLonlineClasses);
 		}
-
 		for (var i = 0; i < this.onlineCourses.length; i++){
 			var course = this.onlineCourses[i];
 			var div = $(HTMLschoolStart);
@@ -118,14 +119,14 @@ var education = {
 var work = {
 	jobs: [
 		{
-			employer: "Employee 1",
+			employer: "Employer 1",
 			title: "Title 1",
 			location: "New York, USA",
 			dates: "January 2000 - January 20001",
 			description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt non voluptatem soluta vitae tenetur minima optio vero facilis expedita ex dolores quibusdam quos eum, consequatur ad possimus itaque. Ipsa, mollitia.",
 		},
 		{
-			employer: "Employee 2",
+			employer: "Employer 2",
 			title: "Title 2",
 			location: "Dubai, UAE",
 			dates: "January 2001 - January 20001",
@@ -133,6 +134,7 @@ var work = {
 		}
 	],
 	display: function(){
+		//Format the jobs
 		for (var i = 0; i < this.jobs.length; i++){
 			var job = this.jobs[i];
 			var div = $(HTMLworkStart);
@@ -149,24 +151,33 @@ var projects = {
 	projects: [
 		{
 			title: "Project Title 1",
-			dates: "January 2000 - January 20001",
+			dates: "January 2000&ndash;January 20001",
 			description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt non voluptatem soluta vitae tenetur minima optio vero facilis expedita ex dolores quibusdam quos eum, consequatur ad possimus itaque. Ipsa, mollitia.",
 			images: [
-				"http://placehold.it/300x200",
-				"http://placehold.it/300x200"
+				"http://placehold.it/600x400",
+				"http://placehold.it/600x400",
+				"http://placehold.it/600x400",
+				"http://placehold.it/600x400",
+				"http://placehold.it/600x400",
+				"http://placehold.it/600x400"
 			]
 		},
 		{
 			title: "Project Title 2",
-			dates: "January 2001 - January 20002",
+			dates: "January 2001&ndash;January 20002",
 			description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt non voluptatem soluta vitae tenetur minima optio vero facilis expedita ex dolores quibusdam quos eum, consequatur ad possimus itaque. Ipsa, mollitia.",
 			images: [
-				"http://placehold.it/300x200",
-				"http://placehold.it/300x200"
+				"http://placehold.it/600x400",
+				"http://placehold.it/600x400",
+				"http://placehold.it/600x400",
+				"http://placehold.it/600x400",
+				"http://placehold.it/600x400",
+				"http://placehold.it/600x400"
 			]
 		}
 	],
 	display: function(){
+		// Format the projects
 		for (var i = 0; i < this.projects.length; i++){
 			var project = this.projects[i];
 			var div = $(HTMLprojectStart);
@@ -205,5 +216,3 @@ $(function(){
 	$("#mapDiv").append("<div id='map'></div>");
 
 });
-
-
